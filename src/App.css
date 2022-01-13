@@ -36,3 +36,50 @@
     transform: rotate(360deg);
   }
 }
+
+.item {
+  display: flex;
+  justify-content: space-between;
+}
+.item1 {
+  display: flex;
+  flex-direction: column;
+  background-color: lemonchiffon;
+  border-radius: 10px;
+}
+
+.item1 div {
+  margin-bottom: 1300px;
+  border-bottom: 2px solid mediumseagreen;
+}
+
+.item2 {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+.item2 div {
+  width: 45%;
+  background-color: lightsteelblue;
+  border-bottom: 2px solid darkslategrey;
+  text-align: center;
+  margin-top: 20px;
+  border-radius: 20px;
+}
+
+.item3 {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  /*column-gap: 30px;*/
+}
+
+.item3 div {
+  width: 30%;
+  background-color: cornflowerblue;
+  margin-bottom: 50px;
+  margin-top: 20px;
+  text-align: center;
+  border-radius: 30px;
+}
+

@@ -1,11 +1,21 @@
-import './App.css';
+import Users from "./components/Users";
+import Posts from "./components/Posts";
+import Comments from "./components/Comments";
+import "./App.css";
 
 const App = () => {
-  return (
-      <div>
-        <h1>Hello!</h1>
-      </div>
-  );
+
+    return (
+        <div>
+            <div className='item'>
+                <Users/>
+                <Posts/>
+            </div>
+
+            <Comments/>
+        </div>
+
+    );
 };
 
 export default App;
