@@ -1,0 +1,10 @@
+.item4 {
+    margin-left: 100px;
+    background-color: mediumseagreen;
+    border-radius: 5px;
+    width: 80%;
+}
+.item4 div {
+    margin-bottom: 10px;
+    text-align: justify;
+}

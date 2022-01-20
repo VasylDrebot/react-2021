@@ -1,0 +1,10 @@
+.item2 {
+    display: flex;
+}
+.item2 div {
+    margin-top: 30px;
+}
+.item2 button {
+    background-color: slategrey;
+    border-radius: 20px;
+}
