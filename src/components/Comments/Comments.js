@@ -1,12 +1,13 @@
 import React from 'react';
 import {useEffect, useState} from 'react';
-import {Outlet} from 'react-router-dom';
+import {Outlet, useParams, useLocation} from 'react-router-dom';
 
 import {commentService} from '../../services/comment.service';
 import Comment from '../Comments/Comment';
 
-const Comments = (postId) => {
-    const [comments, setComments] = useState(null);
+const Comments = () => {
+    const {postId} = useParams();
+    const [comments, setComments] = useState([]);
     useEffect(()=>{
         commentService.getByPostId(postId).then(value => setComments([...value]))
     }, [])

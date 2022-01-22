@@ -7,7 +7,7 @@ import {postService} from '../../services/post.service';
 import {Link} from "react-router-dom";
 import Comments from '../../components/Comments/Comments';
 
-const SinglePost = (postId) => {
+const SinglePost = () => {
     const {id} = useParams();
     const [post, setPost] = useState(null);
     const {state} = useLocation();
@@ -26,7 +26,8 @@ const SinglePost = (postId) => {
                     <div>UserId:{post.userId}</div>
                     <div>Title:{post.title}</div>
                     <div>Body:{post.body}</div>
-                    <Link to={postId}><button>Comments</button></Link>
+                    <Link to={'comments'}><button>Comments</button></Link>
+                    <div><Outlet/></div>
                 </div>
             )}
         </div>
