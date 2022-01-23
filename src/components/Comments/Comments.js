@@ -6,14 +6,11 @@ import {commentService} from '../../services/comment.service';
 import Comment from '../Comments/Comment';
 
 const Comments = () => {
-    const {postId} = useParams();
+    const {id} = useParams();
     const [comments, setComments] = useState([]);
     useEffect(()=> {
-        fetch('https://jsonplaceholder.typicode.com/posts/' + postId + '/comments')
-            .then(response => response.json())
-            .then(json => setComments(json))
-        // commentService.getByPostId(postId).then(value => setComments([...value]))
-    }, [])
+        commentService.getByPostId(id).then(value => setComments([...value]))
+    }, [id])
     return (
         <div>
             {comments && (
