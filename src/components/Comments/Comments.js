@@ -8,12 +8,17 @@ import Comment from '../Comments/Comment';
 const Comments = () => {
     const {postId} = useParams();
     const [comments, setComments] = useState([]);
-    useEffect(()=>{
-        commentService.getByPostId(postId).then(value => setComments([...value]))
+    useEffect(()=> {
+        fetch('https://jsonplaceholder.typicode.com/posts/' + postId + '/comments')
+            .then(response => response.json())
+            .then(json => setComments(json))
+        // commentService.getByPostId(postId).then(value => setComments([...value]))
     }, [])
     return (
         <div>
-            {comments.map(comment => <Comment key={comment.id} comment={comment}/>)}
+            {comments && (
+                comments.map(comment => <Comment key={comment.id} comment={comment}/>)
+            )}
             <div><Outlet/></div>
         </div>
     );
