@@ -1,6 +1,7 @@
 import React from 'react';
 
 import './Post.css';
+
 const Post = ({post:{id, userId, title, body}}) => {
     return (
         <div className={'item4'}>
