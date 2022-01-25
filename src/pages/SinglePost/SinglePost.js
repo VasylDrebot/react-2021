@@ -6,6 +6,7 @@ import {Outlet} from 'react-router-dom';
 import {postService} from '../../services/post.service';
 import {Link} from "react-router-dom";
 import Comments from '../../components/Comments/Comments';
+import './SinglePost.css';
 
 const SinglePost = () => {
     const {id} = useParams();
@@ -21,7 +22,7 @@ const SinglePost = () => {
     return (
         <div>
             {post && (
-                <div>
+                <div className={'post'}>
                     <div>Id:{post.id}</div>
                     <div>UserId:{post.userId}</div>
                     <div>Title:{post.title}</div>

@@ -8,7 +8,7 @@ const Layout = () => {
         <>
 
             <div className={'header'}>
-                <NavLink to="/">Users</NavLink>
+                <NavLink to="/users">Users</NavLink>
                 <NavLink to="/posts">Posts</NavLink>
             </div>
             <Outlet/>
