@@ -8,7 +8,7 @@ import './PostPage.css';
 
 const PostsPage = () => {
     const [posts, setPosts] = useState([]);
-    useEffect(()=>{
+    useEffect(() => {
         postService.getAll().then(value => setPosts([...value]))
 
     }, [])

@@ -4,14 +4,14 @@ import {useLocation, useParams} from 'react-router-dom';
 import {Outlet} from 'react-router-dom';
 
 import {userService} from '../../services/user.service';
-import User from '../../pages/UsersPage/User';
+import User from '../../pages/User/User';
 import {Link} from "react-router-dom";
 
 const UserDetails = () => {
-   const {id} = useParams();
+    const {id} = useParams();
     const [user, setUser] = useState(null);
     const {state} = useLocation();
-    useEffect(()=> {
+    useEffect(() => {
         if (state) {
             setUser(state)
             return
@@ -26,7 +26,9 @@ const UserDetails = () => {
                     <div>Name:{user.name}</div>
                     <div>Username:{user.username}</div>
                     <div>Email:{user.email}</div>
-                    <Link to={'posts'}><button>Posts</button></Link>
+                    <Link to={'posts'}>
+                        <button>Posts</button>
+                    </Link>
                     <div><Outlet/></div>
                 </div>
             )}

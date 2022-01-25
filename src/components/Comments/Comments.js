@@ -8,7 +8,7 @@ import Comment from '../Comments/Comment';
 const Comments = () => {
     const {id} = useParams();
     const [comments, setComments] = useState([]);
-    useEffect(()=> {
+    useEffect(() => {
         commentService.getByPostId(id).then(value => setComments([...value]))
     }, [id])
     return (

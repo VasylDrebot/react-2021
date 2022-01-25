@@ -1,10 +1,12 @@
 import React from 'react';
 import {Outlet, Link} from "react-router-dom";
 
+import './Album.css';
+
 const Album = ({album}) => {
     const {userId, id, title} = album;
     return (
-        <div>
+        <div className={'album'}>
             <p>userId:{userId}</p>
             <p>id:{id}</p>
             <p>title:{title}</p>

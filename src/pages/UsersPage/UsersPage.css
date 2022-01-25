@@ -1,12 +1,9 @@
 .users {
     display: flex;
-    justify-content: space-between;
 }
 .outlet {
-    /*margin-left: 600px;*/
-    border-bottom: 2px solid gray;
-    width: 30%;
+    width: 75%;
 }
 .users1 {
-    width: 50%;
+    width: 25%;
 }

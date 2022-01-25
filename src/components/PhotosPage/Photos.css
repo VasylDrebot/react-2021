@@ -1,0 +1,8 @@
+.photos {
+    display: flex;
+    flex-wrap: wrap;
+}
+.photos div {
+    width: 20%;
+    text-align: center;
+}

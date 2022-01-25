@@ -7,9 +7,11 @@ const Post = ({post}) => {
     const {id, title} = post;
     return (
         <div className={'posts'}>
-           <div>{id}) {title}
-               <Link to={id.toString()} state={post}><button>PostsDetails</button></Link>
-           </div>
+            <div>{id}) {title}
+                <Link to={id.toString()} state={post}>
+                    <button>PostsDetails</button>
+                </Link>
+            </div>
         </div>
     );
 };

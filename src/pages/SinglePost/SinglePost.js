@@ -12,7 +12,7 @@ const SinglePost = () => {
     const {id} = useParams();
     const [post, setPost] = useState(null);
     const {state} = useLocation();
-    useEffect(()=> {
+    useEffect(() => {
         if (state) {
             setPost(state)
             return
@@ -27,7 +27,9 @@ const SinglePost = () => {
                     <div>UserId:{post.userId}</div>
                     <div>Title:{post.title}</div>
                     <div>Body:{post.body}</div>
-                    <Link to={'comments'}><button>Comments</button></Link>
+                    <Link to={'comments'}>
+                        <button>Comments</button>
+                    </Link>
                     <div><Outlet/></div>
                 </div>
             )}
