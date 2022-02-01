@@ -1,68 +1,30 @@
+import React from 'react';
 import {useReducer} from 'react';
 
-import './App.css';
-
-const initialState = {
-    cat: '',
-    dog: '',
-};
+import {Cats, Dogs, Form} from './components';
 
 const reducer = (state, action) => {
     switch (action.type) {
-        case 'update_input':
-            let res = {...state,
-            [action.key]: action.value}
-            return res;
+        case 'ADD_CAT':
+            return {...state, cats: [...state.cats, {id: new Date().getTime(), name: action.payload.cat}]}
+        case 'ADD_DOG':
+            return {...state, dogs: [...state.dogs, {id: new Date().getTime(), name: action.payload.dog}]}
+        case 'DEL_CAT':
+            return {...state, cats: state.cats.filter(cat => cat.id !== action.payload.id)}
+        case 'DEL_DOG':
+            return {...state, dogs: state.dogs.filter(dog => dog.id !== action.payload.id)}
         default:
-            return state;
+            return state
     }
 }
 
 const App = () => {
-
-    const [state, dispatch] = useReducer(reducer, initialState);
-
-
+    const [{cats, dogs}, dispatch] = useReducer(reducer, {cats:[], dogs:[]})
     return (
         <div>
-            <form onSubmit={(e) => alert(
-                JSON.stringify({
-                    cat: state.cat,
-                    dog: state.dog
-                })
-            )}>
-                <label>Add cat:
-                    <input
-                        type="text"
-                        name={'cat'}
-                        value={state.cat}
-                        onChange={(e) =>
-                            dispatch({
-                                type:'update_input',
-                                value:e.target.value,
-                                key:'cat',
-                            })
-                        }
-                    />
-                    <button>Save</button>
-                </label>
-                <label>Add dog:
-                    <input
-                        type="text"
-                        name={'dog'}
-                        value={state.dog}
-                        onChange={(e) =>
-                            dispatch({
-                                type:'update_input',
-                                value:e.target.value,
-                                key:'dog',
-                            })
-                        }
-                    />
-                    <button>Save</button>
-                </label>
-            </form>
-            <hr/>
+            <Form dispatch={dispatch}/>
+            <Cats cats={cats} dispatch={dispatch}/>
+            <Dogs dogs={dogs} dispatch={dispatch}/>
         </div>
     );
 };
