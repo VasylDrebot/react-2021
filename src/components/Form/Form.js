@@ -5,7 +5,7 @@ import {createCar} from '../../store/car.slice';
 
 
 const Form = () => {
-    const {handleSubmit, register, reset} = useForm();
+    const {handleSubmit, reset, setValue, register} = useForm();
     const dispatch = useDispatch();
 
     const submit = (data) => {
@@ -16,9 +16,9 @@ const Form = () => {
     return (
         <div>
             <form onSubmit={handleSubmit(submit)}>
-                <label>Model: <input type="text" {...register('model')}/></label>
-                <label>Price: <input type="text" {...register('price')}/></label>
-                <label>Year: <input type="text" {...register('year')}/></label>
+                <label>Model: <input type="text" placeholder={'model'} {...register('model')}/></label>
+                <label>Price: <input type="text" placeholder={'price'} {...register('price')}/></label>
+                <label>Year: <input type="text"  placeholder={'year'} {...register('year')}/></label>
                 <button>Save</button>
             </form>
         </div>
