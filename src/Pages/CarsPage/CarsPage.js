@@ -5,6 +5,8 @@ import {Car} from '../../components/Car/Car';
 import {getAllCars} from '../../store/car.slice';
 import Form from '../../components/Form/Form';
 
+import './Cars.css';
+
 const CarsPage = () => {
     const {cars, status, error} = useSelector(state => state.cars);
     const dispatch = useDispatch();
@@ -15,7 +17,7 @@ const CarsPage = () => {
 
     return (
         <div>
-            {cars.map(car => <Car key={car.id} car={car}/>)}
+            <div className={'cars'}>{cars.map(car => <Car key={car.id} car={car}/>)}</div>
             <Form/>
         </div>
     );

@@ -13,7 +13,7 @@ const CommentsPage = () => {
         dispatch(getAllComments())
     }, [])
     return (
-        <div>
+        <div style={{display:'flex', flexWrap:'wrap', justifyContent:'space-evenly'}}>
             {error && <h1>{error}</h1>}
             {comments.map(comment => <Comment key={comment.id} comment={comment}/>)}
         </div>

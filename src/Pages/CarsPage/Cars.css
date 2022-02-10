@@ -1,0 +1,10 @@
+.cars {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+.cars div {
+    background-color: darkseagreen;
+    margin-bottom: 20px;
+    text-align: center;
+}
