@@ -1,0 +1,16 @@
+.genre {
+    width: 25%;
+    background-color: royalblue;
+    border: 1px solid slategrey;
+    margin-bottom: 10px;
+    border-radius: 10px;
+}
+.genre:hover {
+    background: rgba(0,0,0,0);
+    color: #3a7999;
+    box-shadow: inset 0 0 0 3px #3a7999;
+}
+.genre h2 {
+    color: lightsteelblue;
+    text-align: center;
+}

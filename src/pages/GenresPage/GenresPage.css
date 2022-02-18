@@ -1,0 +1,9 @@
+.genres {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.outlet {
+    background-color: slategrey;
+}
